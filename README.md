@@ -2,10 +2,6 @@
 
 ## Overview
 
-![](./snap/overview.jpg)
-
----
-
 Pytorch implementation of MixPHM described in the manuscript (This implementation is based on [VL-T5](https://github.com/j-min/VL-T5)). 
 
 ## Installation
