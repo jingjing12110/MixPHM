@@ -1,4 +1,4 @@
-# MixPHM: Redundancy-Aware Parameter-Efficient Tuning for Low-Resource Visual Question Answering
+# MixPHM
 
 ## Overview
 
