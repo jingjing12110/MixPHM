@@ -2,9 +2,6 @@
 
 ## Overview
 
-We propose MixPHM, a redundancy-aware parameter-efficient tuning method that outperforms full finetuning on low-resource VQA. Specifically, MixPHM is a lightweight module implemented by multiple PHM experts in a mixture-of-experts manner. To reduce parameter redundancy, we reparameterize expert weights in a low-rank subspace and share part of the weights inside and across MixPHM. Furthermore, based on our quantitative analysis of representation redundancy, we propose redundancy regularization, which can facilitate MixPHM to reduce task-irrelevant redundancy while promoting task-relevant correlation. Experiments conducted on VQA v2, GQA, and OK-VQA with different low-resource settings show that our MixPHM outperforms state-of-the-art parameter-efficient method and is the only one that consistently surpasses full finetuning, demonstrating its effectiveness and superiority in terms of performance and parameter efficiency. 
-
-
 ![](./snap/overview.jpg)
 
 ---
