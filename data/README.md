@@ -47,3 +47,4 @@
 - Refer to [here](https://github.com/j-min/VL-T5/tree/main/feature_extraction) to obtain ```vg_gqa_obj36.h5```, directly download pre-extracted image features [gqa_testdev_obj36.h5](https://drive.google.com/file/d/14KbtFIcPFJnl2j-J0raqm8-XDxZTOCTG/view?usp=sharing) of VG images for GQA, and saving them ```data/vg_imgfeat```. 
 
 
+
