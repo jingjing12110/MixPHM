@@ -355,7 +355,7 @@ class GQADataset:
         self.data = []
         for split in self.splits:
             self.data.extend(json.load(open(os.path.join(
-                "annotation/gqa", f'{split}.json'), 'r'
+                "data/annotation/gqa", f'{split}.json'), 'r'
             )))
         
         # List to dict (for evaluation and others)
@@ -366,9 +366,9 @@ class GQADataset:
         
         # Answers
         self.ans2label = json.load(
-            open(f"annotation/gqa/trainval_ans2label.json"))
+            open(f"data/annotation/gqa/trainval_ans2label.json"))
         self.label2ans = json.load(
-            open(f"annotation/gqa/trainval_label2ans.json"))
+            open(f"data/annotation/gqa/trainval_label2ans.json"))
         
         assert len(self.ans2label) == len(self.label2ans)
         for ans, label in self.ans2label.items():

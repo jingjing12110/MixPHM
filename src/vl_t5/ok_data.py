@@ -361,10 +361,10 @@ class OKVQADataset:
         self.splits = splits.split(',')
         
         with open(
-                f'annotation/okvqa/mscoco_train2014_annotations.json') as f:
+                f'data/annotation/okvqa/mscoco_train2014_annotations.json') as f:
             train2014_data = json.load(f)
         with open(
-                f'annotation/okvqa/mscoco_val2014_annotations.json') as f:
+                f'data/annotation/okvqa/mscoco_val2014_annotations.json') as f:
             val2014_data = json.load(f)
         train2014_id2datum = {}
         for datum in train2014_data['annotations']:
@@ -381,7 +381,7 @@ class OKVQADataset:
         self.data = []
         for split in self.splits:
             self.data.extend(json.load(open(os.path.join(
-                "annotation/okvqa", f'{split}.json'), 'r')))
+                "data/annotation/okvqa", f'{split}.json'), 'r')))
 
         # Convert list to dict (for evaluation)
         self.id2datum = {

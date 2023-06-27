@@ -306,13 +306,13 @@ class VQA2KShotData:
         super().__init__()
         self.splits = splits.split(',')
 
-        with open(f'annotation/vqav2/v2_mscoco_train2014_annotations.json') as f:
+        with open(f'data/annotation/vqav2/v2_mscoco_train2014_annotations.json') as f:
             train2014_data = json.load(f)
         train2014_id2datum = {}
         for datum in train2014_data['annotations']:
             qid = datum['question_id']
             train2014_id2datum[qid] = datum
-        # with open(f'annotation/vqav2/v2_mscoco_val2014_annotations.json') as f:
+        # with open(f'data/annotation/vqav2/v2_mscoco_val2014_annotations.json') as f:
         #     val2014_data = json.load(f)
         # val2014_id2datum = {}
         # for datum in val2014_data['annotations']:
@@ -325,7 +325,7 @@ class VQA2KShotData:
         self.data = []
         for split in self.splits:
             self.data.extend(json.load(open(os.path.join(
-                "annotation/lxmert_split", f'{split}.json'), 'r')))
+                "data/annotation/lxmert_split", f'{split}.json'), 'r')))
 
         # Convert list to dict (for evaluation)
         self.id2datum = {
@@ -334,9 +334,9 @@ class VQA2KShotData:
         }
 
         self.ans2label = json.load(
-            open(f"annotation/vqav2/trainval_ans2label.json"))
+            open(f"data/annotation/vqav2/trainval_ans2label.json"))
         self.label2ans = json.load(
-            open(f"annotation/vqav2/trainval_label2ans.json"))
+            open(f"data/annotation/vqav2/trainval_label2ans.json"))
         assert len(self.ans2label) == len(self.label2ans)
 
     @property
@@ -392,9 +392,9 @@ class VQAData:
         self.name = splits
         self.splits = splits.split(',')
 
-        with open(f'annotation/vqav2/v2_mscoco_train2014_annotations.json') as f:
+        with open(f'data/annotation/vqav2/v2_mscoco_train2014_annotations.json') as f:
             train2014_data = json.load(f)
-        with open(f'annotation/vqav2/v2_mscoco_val2014_annotations.json') as f:
+        with open(f'data/annotation/vqav2/v2_mscoco_val2014_annotations.json') as f:
             val2014_data = json.load(f)
         train2014_id2datum = {}
         for datum in train2014_data['annotations']:
@@ -410,7 +410,7 @@ class VQAData:
         self.data = []
         for split in self.splits:
             self.data.extend(json.load(open(
-                f"annotation/lxmert_split/{split}.json")))
+                f"data/annotation/lxmert_split/{split}.json")))
 
         if verbose:
             print("Load %d data from split(s) %s." %
@@ -424,9 +424,9 @@ class VQAData:
 
         # Topk Answers
         self.ans2label = json.load(
-            open(f"annotation/vqav2/trainval_ans2label.json"))
+            open(f"data/annotation/vqav2/trainval_ans2label.json"))
         self.label2ans = json.load(
-            open(f"annotation/vqav2/trainval_label2ans.json"))
+            open(f"data/annotation/vqav2/trainval_label2ans.json"))
         assert len(self.ans2label) == len(self.label2ans)
 
         if verbose:
@@ -472,7 +472,7 @@ class VQADataset(Dataset):
         self.img_ids_to_source = {}
         data_info_dicts = []
         for source in self.sources:
-            data_info_path = f'annotation/lxmert_split/{source}.json'
+            data_info_path = f'data/annotation/lxmert_split/{source}.json'
             with open(data_info_path) as f:
                 _data_info_dicts = json.load(f)
                 for _d in _data_info_dicts:
