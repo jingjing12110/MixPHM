@@ -61,6 +61,10 @@ Please see [data/README.md](data/README.md) to prepare datasets.
 
 ## Parameter-efficient tuning and evaluation
 
+- Experiments on OK-VQA dataset.
+```shell
+bash scripts/okvqa_vlt5_mixphm.sh $GPU_IDS $num_GPU
+```
 - Experiments on VQA v2 dataset.
 ```shell
 bash scripts/vqav2_vlt5_mixphm.sh $GPU_IDS $num_GPU
@@ -69,10 +73,7 @@ bash scripts/vqav2_vlt5_mixphm.sh $GPU_IDS $num_GPU
 ```shell
 bash scripts/gqa_vlt5_mixphm.sh $GPU_IDS $num_GPU
 ```
-- Experiments on OK-VQA dataset.
-```shell
-bash scripts/okvqa_vlt5_mixphm.sh $GPU_IDS $num_GPU
-```
+
 
 ## Acknowledgement
 
