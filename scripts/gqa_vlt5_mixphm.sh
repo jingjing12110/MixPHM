@@ -18,6 +18,7 @@ for k in 16 32 64 100 500 1000;do
     src/vl_t5/train.py \
     --distributed \
     --data_name $data_name \
+    --test testdev \
     --k $k \
     --seeds "13, 21, 42, 87, 100" \
     --apply_phm_moe True \
