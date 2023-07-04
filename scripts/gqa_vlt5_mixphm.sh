@@ -41,7 +41,7 @@ for k in 16 32 64 100 500 1000;do
     --use_adapter_self_attn False \
     --lr 5e-3 \
     --batch_size 16 \
-    --es_patience 50 \
+    --es_patience 500 \
     --epochs 1000 \
     --feat_type roi \
     --optim adamw \
