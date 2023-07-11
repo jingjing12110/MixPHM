@@ -7,7 +7,7 @@ e=4
 rank=8
 n=4
 w=0.2
-
+# without early stopping
 for k in 16 32 64 100 500 1000;do
   name=epoch1000_bs16_lr5e-3_k${k}_r${r}_rank${rank}_n${n}_expert${e}+Lra_w${w}_D1D2SAdn
   output=Exp-VLT5-MixPHM/${data_name}/$name
@@ -41,7 +41,7 @@ for k in 16 32 64 100 500 1000;do
     --use_adapter_self_attn False \
     --lr 5e-3 \
     --batch_size 16 \
-    --es_patience 500 \
+    --es_patience 1000 \
     --epochs 1000 \
     --feat_type roi \
     --optim adamw \
